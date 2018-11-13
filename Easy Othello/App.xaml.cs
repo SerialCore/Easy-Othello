@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -39,6 +40,8 @@ namespace Easy_Othello
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            Launch();
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -71,6 +74,36 @@ namespace Easy_Othello
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+        }
+
+        private void Launch()
+        {
+            Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences = Windows.Graphics.Display.DisplayOrientations.Landscape;
+
+            var view = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+
+            view.TryEnterFullScreenMode();
+
+            // active
+            view.TitleBar.BackgroundColor = Color.FromArgb(255, 45, 45, 48);
+            view.TitleBar.ForegroundColor = Colors.White;
+
+            // inactive
+            view.TitleBar.InactiveBackgroundColor = Color.FromArgb(255, 45, 45, 48);
+            view.TitleBar.InactiveForegroundColor = Colors.White;
+
+            // button
+            view.TitleBar.ButtonBackgroundColor = Color.FromArgb(255, 45, 45, 48);
+            view.TitleBar.ButtonForegroundColor = Colors.White;
+
+            view.TitleBar.ButtonHoverBackgroundColor = Color.FromArgb(255, 75, 75, 78);
+            view.TitleBar.ButtonHoverForegroundColor = Colors.White;
+
+            view.TitleBar.ButtonPressedBackgroundColor = Color.FromArgb(255, 75, 75, 78);
+            view.TitleBar.ButtonPressedForegroundColor = Colors.White;
+
+            view.TitleBar.ButtonInactiveBackgroundColor = Color.FromArgb(255, 45, 45, 48);
+            view.TitleBar.ButtonInactiveForegroundColor = Colors.White;
         }
 
         /// <summary>

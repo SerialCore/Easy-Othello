@@ -10,5 +10,153 @@
 
     <Grid>
 
+        <Grid.Resources>
+            <Style TargetType="Grid" x:Key="boardResource">
+
+            </Style>
+        </Grid.Resources>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/white.png" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="white_count" Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="25"
+                       VerticalAlignment="Center" HorizontalAlignment="Center">2</TextBlock>
+                <Image Source="Images/reset.png" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"
+                       Tapped="Reset_Tapped" Margin="10,0,10,0"/>
+            </Grid>
+
+            <Grid Grid.Column="2" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Source="Images/black.png" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="black_count" Grid.Row="1" Grid.Column="1" Foreground="Black" FontSize="25"
+                       VerticalAlignment="Center" HorizontalAlignment="Center">2</TextBlock>
+            </Grid>
+
+            <Viewbox Grid.Column="1" >
+                <Grid>
+                    <Image x:Name="board" Source="Images/board.png" PointerReleased="board_PointerReleased"/>
+                    <Grid x:Name="board_grid" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="0" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="1" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="2" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="3" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="3" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="4" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="4" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="5" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="5" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="6" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="6" Grid.Column="7" Style="{StaticResource boardResource}"/>
+
+                        <Grid Grid.Row="7" Grid.Column="0" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="1" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="2" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="3" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="4" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="5" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="6" Style="{StaticResource boardResource}"/>
+                        <Grid Grid.Row="7" Grid.Column="7" Style="{StaticResource boardResource}"/>
+                    </Grid>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
     </Grid>
+    
 </Page>
